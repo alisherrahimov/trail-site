@@ -1,0 +1,113 @@
+/* Trail — public pages. Tokens mirror src/theme/tokens.ts (README §8). */
+:root {
+  --ground: #E9EAE3;
+  --surface: #F5F6F1;
+  --ink: #191E19;
+  --ink-muted: #565D55;
+  --accent: #C4006A;
+  --fence: #6E7568;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #12160F;
+    --surface: #1B2019;
+    --ink: #E7EBE1;
+    --ink-muted: #A3AB9D;
+    --accent: #FF4D9E;
+    --fence: #8A9280;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 17px/1.6 "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--fence);
+  margin-bottom: 2.5rem;
+}
+
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.mark svg { width: 1.9rem; height: 1.9rem; flex: none; }
+
+nav { display: flex; gap: 1.25rem; }
+nav a, .mono {
+  font-family: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+nav a { color: var(--ink-muted); text-decoration: none; }
+nav a:hover, nav a[aria-current] { color: var(--accent); }
+
+h1 {
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+h2 {
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.5rem;
+}
+.updated { color: var(--ink-muted); margin: 0 0 2rem; }
+
+p, li { color: var(--ink); }
+ul { padding-left: 1.2rem; }
+li { margin: 0.35rem 0; }
+a { color: var(--accent); }
+strong { font-weight: 700; }
+
+.lede { font-size: 1.2rem; color: var(--ink-muted); max-width: 34rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--fence) 35%, transparent);
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.card p { margin: 0.3rem 0; }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--fence);
+  color: var(--ink-muted);
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+footer a { color: var(--ink-muted); }
